@@ -10,8 +10,7 @@ class Player:
     
 
     def getAttackDamage(self):
-        damage = int(random.random() * self.attack)
-        return damage if damage > 0 else 0
+        return int(random.random() * self.attack)
 
     def takeDamage(self, damageDone):
         damageTaken = int(damageDone - (random.random() * self.defence))
@@ -21,6 +20,7 @@ class Player:
             print("{} has taken {} damage".format(self.name, damageTaken))
         else:
             print("{} has taken 0 damage".format(self.name))
+            
         if self.hp > 0:
             print("{} has {} hp left".format(self.name, self.hp))
         else:
