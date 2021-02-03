@@ -5,11 +5,15 @@ class Battlefield:
     def __init__(self, player1, player2):
         self.player1 = player1
         self.player2 = player2
-        self.isBattle = True
 
     def update(self):
-        self.player1.take_damage(self.player2.attack_enemy(self.player1))
-        self.player2.take_damage(self.player1.attack_enemy(self.player2))
+        self.player1.takeDamage(self.player2.attackEnemy(self.player1))
+        self.player2.takeDamage(self.player1.attackEnemy(self.player2))
 
-        if self.player1.hp <= 0 or self.player2.hp <= 0:
-            self.isBattle = False
+
+
+    def isFinished(self):
+        if self.player1.isAlive() and self.player2.isAlive():
+            return False
+        else:
+            return True

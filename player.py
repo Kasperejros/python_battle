@@ -9,7 +9,7 @@ class Player:
         self.defence = defence
     
 
-    def attack_enemy(self, opponent):
+    def attackEnemy(self, opponent):
         damage = int((random.random() * self.attack) - (random.random() * opponent.defence))
 
         if int(damage) < 0:
@@ -18,6 +18,9 @@ class Player:
         print("{} done {} damage to {}".format(self.name, damage, opponent.name))
         return damage
 
-    def take_damage(self, damage):
+    def takeDamage(self, damage):
         self.hp -= damage
         print("{} has {} hp left".format(self.name, self.hp))
+
+    def isAlive(self):
+       return True if self.hp > 0 else False

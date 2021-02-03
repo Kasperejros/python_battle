@@ -7,5 +7,5 @@ player2 = Player("Arek", 100, 50, 40)
 battlefield = Battlefield(player1, player2)
 
 #gameloop
-while battlefield.isBattle:
+while not battlefield.isFinished():
     battlefield.update()
