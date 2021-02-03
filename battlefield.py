@@ -13,4 +13,4 @@ class Battlefield:
 
 
     def isFinished(self):
-        return False if self.player1.isAlive() and self.player2.isAlive() else True
+        return not(self.player1.isAlive() and self.player2.isAlive())

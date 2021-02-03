@@ -21,8 +21,10 @@ class Player:
             print("{} has taken {} damage".format(self.name, damageTaken))
         else:
             print("{} has taken 0 damage".format(self.name))
-
-        print("{} has {} hp left".format(self.name, self.hp))
+        if self.hp > 0:
+            print("{} has {} hp left".format(self.name, self.hp))
+        else:
+            print("{} has died".format(self.name))
 
     def isAlive(self):
        return self.hp > 0
